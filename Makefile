@@ -16,7 +16,7 @@ build: ## Builds the application
 	@go build
 
 check: build ## Tests the pre-commit hooks if they exist
-	./hookz reset --verbose --debug --verbose-output 
+	@hookz reset --verbose --debug --verbose-output 
 	. .git/hooks/pre-commit
 
 test: ## Runs tests and coverage
@@ -26,5 +26,6 @@ clean:
 	@echo Resetting build artifacts...
 	@rm sbom-release-example
 	@rm coverage.out
+
 all: title build test ## Makes all targets
 
